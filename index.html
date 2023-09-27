@@ -1,44 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video with Overlay Text</title>
+    <title>Giridhar Bittu World</title>
     <style>
-        .video-container {
-            position: relative;
-            width: 90vw;
-            height: 90vh;
-            margin: 5vh auto;
-        }
-
-        video {
-            width: 100%;
+        body, html {
             height: 100%;
-            display: block;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #800000;
+            color: #FFFF00;
+            overflow: hidden; /* Prevent scrollbars */
+            position: relative;
         }
 
-        .overlay-text {
-            position: absolute;
+        /* Video background */
+        video.background {
+            position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px black;  /* To enhance readability */
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100; /* Ensure video is behind content */
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .container {
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border-bottom: 4px solid #FFFFFF;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .contact {
+            margin-top: 40px;
+        }
+
+        .image-slider {
+            display: flex;
+            overflow: auto;
+            white-space: nowrap;
+            margin: 50px 0;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .image-slider img {
+            max-height: 300px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .image-slider img:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body>
 
-<div class="video-container">
-    <video controls autoplay muted loop>
-        <source src="video.mp4" type="video/mp4">
+<body>
+    <!-- Background video -->
+    <video class="background" autoplay loop muted>
+        <source src="path_to_your_hd_video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <span class="overlay-text">Giridhar Bittu</span>
-</div>
 
+    <div class="container">
+        <h1>Welcome to Giridhar Bittu World</h1>
+        <p>Discover the journey, passion, and projects of Giridhar Bittu.</p>
+        
+        <div class="image-slider">
+            <img src="n1.jpg" alt="n1">
+            <img src="n2.jpg" alt="n2">
+            <img src="n3.jpeg" alt="n3">
+            <img src="n1.jpg" alt="n1">
+            <img src="n2.jpg" alt="n2">
+            <img src="n3.jpeg" alt="n3">
+        </div>
+        
+        <div class="contact">
+            <p>Email: <a href="mailto:giridharbittu1@gmail.com">giridharbittu1@gmail.com</a></p>
+            <p>Contact: 9063344147</p>
+        </div>
+    </div>
 </body>
 </html>
