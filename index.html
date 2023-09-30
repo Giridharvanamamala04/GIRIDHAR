@@ -80,34 +80,24 @@
     </div>
 
     <script>
-       function validateLogin() {
-    const loginId = document.getElementById('loginId').value;
-    const password = document.getElementById('password').value;
-    const errorMessage = document.getElementById('errorMessage');
-    console.log("Entered loginId:", loginId);  // Debugging line
-    console.log("Entered password:", password);  // Debugging line
+    function validateLogin() {
+        const loginId = document.getElementById('loginId').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        
+        console.log("Entered loginId:", loginId);  // Debugging line
+        console.log("Entered password:", password);  // Debugging line
 
-    if (loginId === '906334' && password === '906334') {
-        // Correct credentials, redirect to main website
-        window.location.href = 'index.html';
-    } else {
-        // Incorrect credentials, show error message
-        errorMessage.textContent = 'Wrong password or login ID';
-    }
-}
-
-
-    if (loginId === '906334' && password === '906334') {
-        // Correct credentials, redirect to main website
-        window.location.href = 'index.html';
-    } else {
-        // Incorrect credentials, show error message
-        errorMessage.textContent = 'Wrong password or login ID';
-    }
-}
-
-            }
+        if (loginId === '906334' && password === '906334') {
+            // Correct credentials, redirect to main website
+            window.location.href = 'index.html';
+        } else {
+            // Incorrect credentials, show error message
+            errorMessage.textContent = 'Wrong password or login ID';
         }
-    </script>
+    }
+</script>
+
+
 </body>
 </html>
