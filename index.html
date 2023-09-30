@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giridhar Bittu World</title>
+    <title>Login to Giridhar Bittu World</title>
     <style>
         body, html {
             height: 100%;
@@ -12,106 +12,59 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: #800000;
             color: #FFFF00;
-            overflow: hidden; /* Prevent scrollbars */
-        }
-
-        /* Video background */
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .video-container video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-        }
-
-        .container {
-            padding: 50px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            border-bottom: 4px solid #FFFFFF;
-            padding-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin-top: 20px;
-        }
-
-        .contact {
-            margin-top: 40px;
-        }
-
-        .image-slider {
             display: flex;
-            overflow: auto;
-            white-space: nowrap;
-            margin: 50px 0;
-            animation: scroll 20s linear infinite;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes scroll {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-100%); }
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .image-slider img {
-            max-height: 300px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
+        .login-container h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
-        .image-slider img:hover {
-            transform: scale(1.1);
+        .login-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #800000;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #FFFF00;
+            color: #800000;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .login-button:hover {
+            background-color: #FFD700;
         }
     </style>
 </head>
 
 <body>
-    <!-- Background video container -->
-    <div class="video-container">
-        <video autoplay muted loop playsinline>
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="container">
-        <h1>Welcome to Giridhar Bittu World</h1>
-        <p>Discover the journey, passion, and projects of Giridhar Bittu.</p>
-        
-        <div class="image-slider">
-            <img src="n1.jpg" alt="Nature Image 1">
-            <img src="n2.jpg" alt="Nature Image 2">
-            <img src="n3.jpeg" alt="Nature Image 3">
-            <img src="n1.jpg" alt="Nature Image 1">
-            <img src="n2.jpg" alt="Nature Image 2">
-            <img src="n3.jpeg" alt="Nature Image 3">
-        </div>
-        
-        <div class="contact">
-            <p>Email: <a href="mailto:giridharbittu1@gmail.com">giridharbittu1@gmail.com</a></p>
-            <p>Contact: 9063344147</p>
-        </div>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="your-login-script.php" method="post">
+            <input type="text" class="login-input" name="username" placeholder="Username" required>
+            <input type="password" class="login-input" name="password" placeholder="Password" required>
+            <button type="submit" class="login-button">Login</button>
+        </form>
     </div>
 </body>
 </html>
